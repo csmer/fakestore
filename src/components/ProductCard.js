@@ -2,10 +2,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
+import { CartContext } from '../contexts/CartContext';
 
 export default function ProductCard(props){
+    const cart = useContext(CartContext);
     return (
         <>
             <Row xs={1} md={2} className="g-5">

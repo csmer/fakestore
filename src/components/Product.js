@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../contexts/CartContext';
 
 
 export default function Product(props){
     const [data, setData] = useState([]);
+    const cart = useContext(CartContext);
 
     useEffect(() => {
         async function getData(){ 
             const response = await fetch `https://fakestoreapi.com/products`;
             const jsonData = await response.json();
             setData(jsonData);
-            console.log(data);
+            console.log(data, cart);
         }
         getData();
     }, []);

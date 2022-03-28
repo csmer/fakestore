@@ -11,7 +11,7 @@ export default function ProductDetails(props) {
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [quantityInput, setQuantityInput] = useState(1);
-    const cart = useContext(CartContext);
+    const fakeStoreCart = useContext(CartContext);
 
     useEffect(() => {
         async function getData(){
@@ -26,15 +26,14 @@ export default function ProductDetails(props) {
 
     const handleQuantity = (e) => {
         const input = e.target.value;
-        console.log(input);
         setQuantityInput(input);
-        console.log("form changed!")
+        console.log("form changed!", quantityInput);
     }
 
     const addToCart = (e) => {
         e.preventDefault();
-        console.log("carted!", quantityInput, cart)
-        cart.push(quantityInput);
+        console.log("carted!", quantityInput, fakeStoreCart);
+        fakeStoreCart.push([data, quantityInput]);
     }
 
     if (isLoaded){
