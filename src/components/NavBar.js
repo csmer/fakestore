@@ -6,10 +6,11 @@ export default function NavBar() {
         <>
             <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="/">FakeStore</Navbar.Brand>
+                <Navbar.Brand href="/">Micah's FakeStore</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
+                    <Nav.Link href="/">Products</Nav.Link>
                     <Nav.Link href="/cart">Cart</Nav.Link>
                     <Nav.Link href="/checkout">Checkout</Nav.Link>
                 </Nav>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import NavBar from "./NavBar";
 import ProductCard from "./ProductCard";
 import React from 'react';
 
@@ -19,21 +18,15 @@ export default function Product(props){
 
     return (
         <>
-            <>
-                <NavBar />
-            </>
-            <>
-                {data.map((product) => (
-                    <ProductCard
-                        product={product}
-                        title={product.title}
-                        price={product.price}
-                        image={product.image}
-                        id={product.id}
-                    />
-                ))}
-            </>
-
+            {data.map((product) => (
+                <ProductCard
+                    id={product.id}
+                    product={product}
+                    title={product.title}
+                    price={product.price}
+                    image={product.image}
+                />
+            ))}
         </>
     )
 }

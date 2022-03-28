@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext'
 
 import Product from './components/Product';
 import ProductDetails from './components/ProductDetails';
@@ -14,18 +15,19 @@ import NotFound from './components/NotFound';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Product />
-    {/* <Router>
-      <Routes>
-        <Route path="/" element={<Product />} >
-          <Route path="products" element={<Product />} />
-          <Route path="products/:id" element={<ProductDetails />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="*" element={<NotFound />} />
-        </Route>
-      </Routes>
-    </Router> */}
+    <CartProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />} >
+              <Route index element={<Product />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="cart" element={<Cart />} />
+              <Route path="checkout" element={<Checkout />} />
+              <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
