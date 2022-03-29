@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form';
 import { CartContext } from '../contexts/CartContext';
 
+
 export default function ProductDetails(props) {
     const { id } = useParams();
     const [data, setData] = useState([]);
@@ -37,20 +38,16 @@ export default function ProductDetails(props) {
         // }
         console.log("before carted!", quantityInput, cart);
         data["quantity"] = quantityInput;
-
         let tmp = [];
-
         tmp.push(data);
-
         console.log(tmp);
-
-        setCart(tmp => ({ arr: [...cart, ...tmp]}));
+        setCart(tmp)
+        console.log("after carted!", "quantInput: ", quantityInput, "cart:", cart);
+        //setCart(tmp => ({ arr: [...cart, ...tmp]}));
         //setCart({myCart: [...cart, ...tmp]})
-        //setCart({cart:tmp})
         // setCart(cart => ({
         //     myArray: [...cart, ...tmp]
         // }))
-        console.log("after carted!", "quantInput: ", quantityInput, "cart:", cart);
         //cart.splice(0, 0, data);
     }
 

@@ -9,11 +9,12 @@ export default function CartList(props) {
     const [cart, setCart] = useContext(CartContext);
     useEffect (() => {
         console.log(cart);
-    }, [cart]);
+    }, []);
 
-    const removeFromCart = (e) => {
+    const removeFromCart = () => {
         console.log("removing from cart...", cart);
-        //setCart("REMOVED");
+        setCart([]);
+        alert("Your item has been removed from cart!")
     }
 
     return (
