@@ -13,7 +13,14 @@ export default function Product(props){
             const response = await fetch `https://fakestoreapi.com/products`;
             const jsonData = await response.json();
             setData(jsonData);
-            console.log(data, cart);
+            console.log(jsonData, cart);
+
+            // if ((typeof cart[1] === 'function')){
+            //     console.log("popping...")
+            //     cart.pop();
+            //     cart.pop();
+            //     console.log(jsonData, cart);
+            // }
         }
         getData();
     }, []);

@@ -1,11 +1,21 @@
+import React, { useContext, useEffect } from 'react';
+import { CartContext } from '../contexts/CartContext';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import React, { useContext } from 'react';
-import { Link } from "react-router-dom";
 
-export default function ProductCard(props){
+export default function CartList(props) {
+    const [cart, setCart] = useContext(CartContext);
+    useEffect (() => {
+        console.log(cart);
+    }, [cart]);
+
+    const removeFromCart = (e) => {
+        console.log("removing from cart...", cart);
+        //setCart("REMOVED");
+    }
+
     return (
         <>
             <Row xs={1} md={2} className="g-5">
@@ -16,11 +26,8 @@ export default function ProductCard(props){
                             <Card.Body>
                             <Card.Title>{props.title}</Card.Title>
                             <Card.Subtitle className="mb-1 text-muted">${props.price}</Card.Subtitle>
-                            <Link to={{ pathname: `/products/${props.id}` } }>
-                                <Button variant="info">
-                                    Details (ID: {props.id})
-                                </Button>
-                            </Link>
+                            <Card.Subtitle className="mb-1 text-muted">Quantity: {props.quantity}</Card.Subtitle>
+                            <Button variant="outline-danger" onClick={removeFromCart}> Remove from Cart </Button>
                             </Card.Body>
                         </Card>
                     </Col>
