@@ -40,8 +40,8 @@ export default function ProductDetails(props) {
         data["quantity"] = quantityInput;
         let tmp = [];
         tmp.push(data);
-        console.log(tmp);
-        setCart(tmp)
+        console.log(tmp, "data:", data);
+        setCart([...cart, ...tmp]);
         console.log("after carted!", "quantInput: ", quantityInput, "cart:", cart);
         //setCart(tmp => ({ arr: [...cart, ...tmp]}));
         //setCart({myCart: [...cart, ...tmp]})

@@ -26,7 +26,7 @@ export default function CartList(props) {
                             <Card.Img variant="top" src={props.image} />
                             <Card.Body>
                             <Card.Title>{props.title}</Card.Title>
-                            <Card.Subtitle className="mb-1 text-muted">${props.price}</Card.Subtitle>
+                            <Card.Subtitle className="mb-1 text-muted">${props.price} ea</Card.Subtitle>
                             <Card.Subtitle className="mb-1 text-muted">Quantity: {props.quantity}</Card.Subtitle>
                             <Button variant="outline-danger" onClick={removeFromCart}> Remove from Cart </Button>
                             </Card.Body>

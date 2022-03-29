@@ -9,13 +9,13 @@ export default function NavBar() {
             <Container>
                 <Link to={{ pathname: `/`}}>Micah's FakeStore</Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                    <Link to={{ pathname: `/`}}>Products</Link>
-                    <Link to={{ pathname: `/cart`}}>Cart</Link>
-                    <Link to={{ pathname: `/checkout`}}>Checkout</Link>
-                </Nav>
-                </Navbar.Collapse>
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Link to={{ pathname: `/`}}>Products</Link>
+                            <Link to={{ pathname: `/cart`}}>Cart</Link>
+                            <Link to={{ pathname: `/checkout`}}>Checkout</Link>
+                        </Nav>
+                    </Navbar.Collapse>
             </Container>
             </Navbar>
         </>

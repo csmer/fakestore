@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export default function ProductCard(props){
     return (
         <>
-            <Row xs={1} md={2} className="g-5">
+            <Row xs={1} md={4} className="g-5">
                 {Array.from({ length: 1 }).map((_, idx) => (
                     <Col>
                         <Card>

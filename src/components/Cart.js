@@ -10,14 +10,14 @@ export default function Cart() {
 
     useEffect (() => {
         console.log(cart);
-        if (cart){
-            console.log("setting cart exists...")
-            console.log(cart);
-            setCartExists(true);
-        }
+        // if (typeof cart[0] === 'array'){
+        //     console.log("setting cart exists...")
+        //     console.log(cart);
+        //     setCartExists(true);
+        // }
     });
 
-    if (cartExists){
+    // if (cartExists){
         return (
             <>
                 {cart.map((product) => (
@@ -32,18 +32,18 @@ export default function Cart() {
                 ))}
             </>
         )
-    }
-    if(!cartExists){
-        return (
-            <>
-                <div> Please add product(s) to the cart!</div>
-                <Link to={{ pathname: `/` } }>
-                    <Button variant="primary">
-                        Go to products
-                    </Button>
-                </Link>
-            </>
-        )
-    }
+    // }
+    
+        // return (
+        //     <>
+        //         <div> Please add product(s) to the cart!</div>
+        //         <Link to={{ pathname: `/` } }>
+        //             <Button variant="primary">
+        //                 Go to products
+        //             </Button>
+        //         </Link>
+        //     </>
+        // )
+    
 
 }
