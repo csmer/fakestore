@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { CartContext } from '../contexts/CartContext';
 
 
-export default function ProductDetails(props) {
+export default function ProductDetails() {
     const { id } = useParams();
     const [data, setData] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
@@ -32,10 +32,6 @@ export default function ProductDetails(props) {
     }
 
     const addToCart = () => {
-        // if ((typeof fakeStoreCart[1] === 'function')){
-        //     cart.pop();
-        //     cart.pop();
-        // }
         console.log("before carted!", quantityInput, cart);
         data["quantity"] = quantityInput;
         let tmp = [];
@@ -43,12 +39,6 @@ export default function ProductDetails(props) {
         console.log(tmp, "data:", data);
         setCart([...cart, ...tmp]);
         console.log("after carted!", "quantInput: ", quantityInput, "cart:", cart);
-        //setCart(tmp => ({ arr: [...cart, ...tmp]}));
-        //setCart({myCart: [...cart, ...tmp]})
-        // setCart(cart => ({
-        //     myArray: [...cart, ...tmp]
-        // }))
-        //cart.splice(0, 0, data);
     }
 
     if (isLoaded){

@@ -1,10 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import CheckoutList from './CheckoutList';
-import Card from 'react-bootstrap/Card';
-import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form';
 import CheckoutForm from './CheckoutForm';
 
 export default function Checkout() {
@@ -12,10 +9,13 @@ export default function Checkout() {
     const [totalPrice, setTotalPrice] = useState(1);
     useEffect (() => {
         console.log(cart);
-        // iterate through cart and multiply * product's quantities by price and sum
-        let tmp = 0;
-        tmp = 2 * 4; // calculate here
-        setTotalPrice(tmp);
+        let tmpPrice = 0;
+        for (var i = 0; i < cart.length; i++){
+            console.log(cart[i].price, cart[i].quantity);
+            tmpPrice += (cart[i].price * cart[i].quantity);
+        }
+        console.log(tmpPrice);
+        setTotalPrice(tmpPrice);
     });
     return (
         <>  
@@ -29,7 +29,7 @@ export default function Checkout() {
                     />
                 ))}
                 <CheckoutForm/>
-                <div>TOTAL PRICE: ${totalPrice}</div> 
+                <Button variant="outline-success" disabled size="lg"> TOTAL PRICE: ${totalPrice} </Button>
         </>
     )
 }

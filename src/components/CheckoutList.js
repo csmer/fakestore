@@ -15,7 +15,7 @@ export default function CheckoutList(props) {
                         <Card>
                             <Card.Body>
                             <Card.Title>{props.title}</Card.Title>
-                            <Card.Subtitle className="mb-1 text">${props.price} ea</Card.Subtitle>
+                            <Card.Subtitle className="mb-1 text">${props.price} each</Card.Subtitle>
                             <Card.Subtitle className="mb-2 text">Quantity: {props.quantity}</Card.Subtitle>
                             </Card.Body>
                         </Card>

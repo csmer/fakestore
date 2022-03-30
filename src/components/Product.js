@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 
 
-export default function Product(props){
+export default function Product(){
     const [data, setData] = useState([]);
     const cart = useContext(CartContext);
 
@@ -14,13 +14,6 @@ export default function Product(props){
             const jsonData = await response.json();
             setData(jsonData);
             console.log(jsonData, cart);
-
-            // if ((typeof cart[1] === 'function')){
-            //     console.log("popping...")
-            //     cart.pop();
-            //     cart.pop();
-            //     console.log(jsonData, cart);
-            // }
         }
         getData();
     }, []);
